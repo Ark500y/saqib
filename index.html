@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mian Saqib Hussain – Boom Truck Services | Dammam, KSA</title>
+<meta name="description" content="Professional boom truck & heavy lifting services in Dammam, Saudi Arabia. Fast, safe, and reliable. Call 0594 032 500.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   RESET & VARIABLES
+═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --Y:  #F5C000;       /* primary yellow */
+  --YL: #FFD340;       /* yellow light */
+  --YD: #C89A00;       /* yellow dark */
+  --BK: #0A0A0A;       /* near-black */
+  --D1: #111111;
+  --D2: #1A1A1A;
+  --D3: #242424;
+  --D4: #2E2E2E;
+  --GR: #777;
+  --LT: #ECECEC;
+  --WH: #FFFFFF;
+  --GN: #22C55E;       /* whatsapp green */
+  --radius: 6px;
+  --shadow: 0 8px 40px rgba(0,0,0,.55);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background: var(--BK);
+  color: var(--WH);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a  { text-decoration: none; color: inherit; }
+
+/* ═══════════════════════════════════════════
+   TYPOGRAPHY HELPERS
+═══════════════════════════════════════════ */
+.oswald { font-family: 'Oswald', sans-serif; }
+.cairo  { font-family: 'Cairo',  sans-serif; }
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Oswald', sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--Y);
+  margin-bottom: 14px;
+}
+.tag::before { content:''; display:block; width:20px; height:2px; background:var(--Y); flex-shrink:0; }
+
+h2.sec-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: -.3px;
+}
+h2.sec-title .y { color: var(--Y); }
+
+.sec-sub {
+  margin-top: 10px;
+  color: var(--GR);
+  font-size: .97rem;
+  line-height: 1.65;
+  max-width: 500px;
+}
+.sec-sub .ar {
+  display: block;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  text-align: right;
+  font-size: .9em;
+  margin-top: 4px;
+}
+
+/* ═══════════════════════════════════════════
+   SECTION WRAPPER
+═══════════════════════════════════════════ */
+section { padding: 88px 5vw; }
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════ */
+.rv { opacity:0; transform:translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+.rv.on { opacity:1; transform:none; }
+.rv.d1 { transition-delay:.1s }
+.rv.d2 { transition-delay:.18s }
+.rv.d3 { transition-delay:.26s }
+.rv.d4 { transition-delay:.34s }
+
+/* ═══════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════ */
+#nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  height: 66px;
+  background: rgba(10,10,10,.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(245,192,0,.12);
+  transition: background .3s;
+}
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.nav-brand .name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--Y);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.nav-brand .sub {
+  font-size: .68rem;
+  color: var(--GR);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Oswald', sans-serif;
+  font-size: .88rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--LT);
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--Y); }
+.nav-cta {
+  background: var(--Y) !important;
+  color: var(--BK) !important;
+  padding: 8px 18px;
+  border-radius: 3px;
+  font-weight: 700;
+  transition: background .2s !important;
+}
+.nav-cta:hover { background: var(--YL) !important; }
+@media(max-width:768px){ .nav-links{ display:none; } }
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+#hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 110px 5vw 70px;
+}
+
+/* Real hero background image – white boom crane truck on construction site */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80');
+  background-size: cover;
+  background-position: center 60%;
+  filter: brightness(.38) saturate(.7);
+  transform: scale(1.04);
+  transition: transform 8s ease;
+}
+.hero-bg.loaded { transform: scale(1); }
+
+/* Yellow diagonal stripe overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(105deg, rgba(10,10,10,.92) 38%, rgba(10,10,10,.45) 70%, transparent 100%),
+    linear-gradient(to top, rgba(10,10,10,.7) 0%, transparent 45%);
+}
+
+/* Animated hazard-stripe bar at bottom */
+.hero-stripe {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 7px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--Y) 0px, var(--Y) 20px,
+    var(--BK) 20px, var(--BK) 40px
+  );
+  animation: stripeMove 4s linear infinite;
+}
+@keyframes stripeMove {
+  from { background-position: 0 0; }
+  to   { background-position: 40px 0; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(245,192,0,.12);
+  border: 1px solid rgba(245,192,0,.35);
+  color: var(--Y);
+  font-family: 'Oswald', sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 2px;
+  margin-bottom: 22px;
+  animation: heroFade .7s .1s both;
+}
+.hero-eyebrow span.dot {
+  width: 6px; height: 6px;
+  background: var(--Y);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+.hero-h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: clamp(3rem, 9vw, 6.8rem);
+  line-height: .95;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  animation: heroFade .7s .2s both;
+}
+.hero-h1 em {
+  font-style: normal;
+  color: var(--Y);
+  display: block;
+}
+.hero-h1 .outline {
+  -webkit-text-stroke: 2px rgba(245,192,0,.45);
+  color: transparent;
+  display: block;
+}
+
+.hero-tagline {
+  margin-top: 22px;
+  font-size: clamp(.95rem, 2vw, 1.2rem);
+  font-weight: 600;
+  color: var(--LT);
+  max-width: 480px;
+  animation: heroFade .7s .3s both;
+}
+.hero-tagline .ar {
+  display: block;
+  font-family: 'Cairo', sans-serif;
+  font-size: .9em;
+  color: #aaa;
+  margin-top: 5px;
+  direction: rtl;
+  text-align: left;
+}
+
+.hero-bar {
+  width: 64px; height: 4px;
+  background: linear-gradient(90deg,var(--Y),transparent);
+  margin: 26px 0;
+  animation: heroFade .7s .35s both;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: heroFade .7s .45s both;
+}
+
+.btn-y {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--Y);
+  color: var(--BK);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 3px;
+  transition: all .2s;
+  box-shadow: 0 4px 20px rgba(245,192,0,.3);
+}
+.btn-y:hover { background: var(--YL); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245,192,0,.45); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: transparent;
+  color: var(--WH);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 3px;
+  border: 1.5px solid rgba(255,255,255,.22);
+  transition: all .2s;
+}
+.btn-ghost:hover { border-color: var(--Y); color: var(--Y); }
+
+.hero-kpis {
+  display: flex;
+  gap: 36px;
+  margin-top: 54px;
+  animation: heroFade .7s .55s both;
+}
+.kpi { display:flex; flex-direction:column; }
+.kpi-n {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--Y);
+  line-height: 1;
+}
+.kpi-l {
+  font-size: .72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--GR);
+  margin-top: 4px;
+}
+.kpi-sep { width: 1px; background: rgba(255,255,255,.1); align-self: stretch; }
+
+@keyframes heroFade { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:none} }
+
+/* ═══════════════════════════════════════════
+   TICKER BAND
+═══════════════════════════════════════════ */
+.ticker-band {
+  background: var(--Y);
+  overflow: hidden;
+  padding: 12px 0;
+  position: relative;
+  z-index: 10;
+}
+.ticker-inner {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+  animation: ticker 25s linear infinite;
+}
+.ticker-item {
+  flex-shrink: 0;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: .82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--BK);
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.ticker-item::after { content: '◆'; font-size: .5rem; opacity: .5; }
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ═══════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════ */
+#about {
+  background: var(--D1);
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.about-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+@media(max-width:800px){ .about-wrap{ grid-template-columns:1fr; gap:36px; } }
+
+.about-img-stack {
+  position: relative;
+  padding-bottom: 8%;
+}
+.about-img-main {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(245,192,0,.15);
+}
+.about-img-accent {
+  position: absolute;
+  width: 48%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  bottom: 0; right: -4%;
+  border-radius: var(--radius);
+  border: 3px solid var(--D1);
+  box-shadow: var(--shadow);
+}
+.about-badge {
+  position: absolute;
+  top: 16px; left: 16px;
+  background: var(--Y);
+  color: var(--BK);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 7px 13px;
+  border-radius: 3px;
+}
+
+.about-body p {
+  color: #BDBDBD;
+  font-size: .97rem;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+.about-body p.ar {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl; text-align: right;
+  font-size: .92em; color: #888;
+}
+.about-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(245,192,0,.07);
+  border: 1px solid rgba(245,192,0,.22);
+  color: var(--Y);
+  font-family: 'Oswald', sans-serif;
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 3px;
+}
+
+/* ═══════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════ */
+#services { background: var(--BK); }
+.services-hdr { margin-bottom: 50px; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+}
+@media(max-width:600px){ .services-grid{ grid-template-columns:1fr; } }
+
+.scard {
+  position: relative;
+  overflow: hidden;
+  background: var(--D2);
+  transition: background .3s;
+  cursor: default;
+}
+.scard:hover { background: var(--D3); }
+
+/* Image zone */
+.scard-img-wrap {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.scard-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease, filter .5s ease;
+  filter: brightness(.6) saturate(.65);
+}
+.scard:hover .scard-img-wrap img {
+  transform: scale(1.05);
+  filter: brightness(.5) saturate(.55);
+}
+.scard-num {
+  position: absolute;
+  top: 14px; right: 18px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: rgba(245,192,0,.18);
+  line-height: 1;
+  pointer-events: none;
+}
+.scard-icon-badge {
+  position: absolute;
+  bottom: 14px; left: 18px;
+  width: 48px; height: 48px;
+  background: var(--Y);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.55rem;
+  transition: transform .3s;
+}
+.scard:hover .scard-icon-badge { transform: scale(1.1); }
+
+/* Text zone */
+.scard-body {
+  padding: 24px 26px 28px;
+  border-top: 2px solid transparent;
+  transition: border-color .3s;
+}
+.scard:hover .scard-body { border-color: var(--Y); }
+
+.scard-en {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  margin-bottom: 3px;
+}
+.scard-ar {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: .97rem;
+  color: var(--GR);
+  direction: rtl; text-align: right;
+  margin-bottom: 12px;
+  display: block;
+}
+.scard-desc { color: #888; font-size: .88rem; line-height: 1.6; }
+
+/* ═══════════════════════════════════════════
+   GUARANTEE STRIP
+═══════════════════════════════════════════ */
+.guarantee-strip {
+  background: var(--Y);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: rgba(0,0,0,.18);
+}
+@media(max-width:600px){ .guarantee-strip{ grid-template-columns:repeat(2,1fr); } }
+.gitem {
+  background: var(--Y);
+  display: flex; flex-direction: column; align-items: center;
+  padding: 32px 20px 28px;
+  text-align: center;
+  transition: background .2s;
+}
+.gitem:hover { background: var(--YL); }
+.gitem .gi { font-size: 2rem; margin-bottom: 10px; }
+.gitem .gt {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--BK);
+}
+.gitem .gs { font-size: .77rem; color: rgba(0,0,0,.6); margin-top: 3px; }
+
+/* ═══════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════ */
+#contact { background: var(--D1); }
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+}
+@media(max-width:800px){ .contact-wrap{ grid-template-columns:1fr; gap:36px; } }
+
+.cinfo { display: flex; flex-direction: column; gap: 20px; }
+.cinfo-item {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 18px 20px;
+  background: var(--D2);
+  border: 1px solid rgba(245,192,0,.1);
+  border-radius: 4px;
+  transition: border-color .2s;
+}
+.cinfo-item:hover { border-color: rgba(245,192,0,.35); }
+.cii-icon {
+  width: 44px; height: 44px; min-width: 44px;
+  background: rgba(245,192,0,.1);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+}
+.cii-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--Y);
+  display: block;
+  margin-bottom: 4px;
+}
+.cii-val { font-size: 1.02rem; font-weight: 600; }
+.cii-val a { color: inherit; }
+.cii-val .ar {
+  display: block;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl; text-align: right;
+  font-size: .88em; color: var(--GR);
+}
+
+/* CTA Box */
+.cta-box {
+  background: var(--D2);
+  border: 1px solid rgba(245,192,0,.14);
+  border-radius: 6px;
+  padding: 36px 32px;
+}
+.cta-box h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.cta-box h3 span { color: var(--Y); }
+.cta-box .sub {
+  color: var(--GR);
+  font-size: .92rem;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+.cta-box .sub .ar {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl; text-align: right;
+  display: block; font-size: .9em; margin-top: 4px;
+}
+.phone-hero {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--Y);
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0 22px;
+  transition: color .2s;
+}
+.phone-hero:hover { color: var(--YL); }
+
+.cta-btns { display: flex; flex-direction: column; gap: 12px; }
+.btn-call, .btn-wa {
+  display: flex; align-items: center; justify-content: center;
+  gap: 10px;
+  padding: 15px 24px;
+  border-radius: 4px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all .22s;
+}
+.btn-call { background: var(--Y); color: var(--BK); }
+.btn-call:hover { background: var(--YL); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(245,192,0,.35); }
+.btn-wa { background: #25D366; color: var(--WH); }
+.btn-wa:hover { background: #20c05e; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(37,211,102,.35); }
+
+/* QR */
+.qr-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 16px;
+  background: rgba(245,192,0,.04);
+  border: 1px dashed rgba(245,192,0,.22);
+  border-radius: 4px;
+  margin-top: 18px;
+}
+.qr-box {
+  width: 68px; height: 68px; min-width: 68px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 4px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qr-box svg { width: 100%; height: 100%; }
+.qr-text { font-size: .8rem; color: var(--GR); line-height: 1.55; }
+.qr-text strong {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: .88rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--Y);
+  margin-bottom: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   LOCATION
+═══════════════════════════════════════════ */
+#location {
+  background: var(--BK);
+  border-top: 1px solid rgba(255,255,255,.04);
+}
+.location-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 50px;
+  align-items: start;
+}
+@media(max-width:800px){ .location-wrap{ grid-template-columns:1fr; } }
+
+.loc-info { display: flex; flex-direction: column; gap: 18px; }
+.loc-info .loc-head {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--Y);
+  margin-bottom: 4px;
+}
+.loc-info p { color: var(--GR); font-size: .93rem; line-height: 1.65; }
+.loc-info p .ar {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl; text-align: right;
+  display: block; font-size: .92em; margin-top: 3px;
+}
+.directions-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--Y);
+  color: var(--BK);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700; font-size: .88rem;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 11px 22px; border-radius: 3px;
+  transition: all .2s; align-self: flex-start;
+}
+.directions-btn:hover { background: var(--YL); transform: translateY(-2px); }
+
+.map-frame {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(245,192,0,.15);
+  position: relative;
+}
+.map-frame iframe {
+  width: 100%; height: 320px; border: none;
+  filter: grayscale(1) invert(1) brightness(.68) contrast(1.1);
+}
+.map-pin {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: var(--BK);
+  border: 1px solid rgba(245,192,0,.3);
+  padding: 8px 14px;
+  border-radius: 3px;
+  font-family: 'Oswald', sans-serif;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--Y);
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+  background: var(--D1);
+  border-top: 2px solid rgba(245,192,0,.18);
+  padding: 44px 5vw 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+.footer-logo {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  color: var(--Y);
+  letter-spacing: 1px;
+}
+.footer-av {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: .88rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--GR);
+}
+.footer-av .ar {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  display: block;
+  font-size: .9em;
+  letter-spacing: 0;
+  margin-top: 3px;
+}
+.footer-links {
+  display: flex; gap: 18px; align-items: center;
+}
+.footer-links a {
+  font-family: 'Oswald', sans-serif;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color .2s;
+}
+.footer-links .fc { color: var(--Y); }
+.footer-links .fw { color: var(--GN); }
+.footer-links a:hover { opacity: .8; }
+.footer-sep { width: 1px; height: 18px; background: rgba(255,255,255,.12); }
+footer small { color: #333; font-size: .75rem; }
+
+/* ═══════════════════════════════════════════
+   FLOATING BUTTONS
+═══════════════════════════════════════════ */
+.floats {
+  position: fixed;
+  bottom: 26px; right: 22px;
+  display: flex; flex-direction: column; gap: 12px;
+  z-index: 998;
+}
+.fb {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.45rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,.6);
+  transition: all .25s;
+  position: relative;
+}
+.fb:hover { transform: scale(1.12); }
+.fb .tip {
+  position: absolute;
+  right: 66px;
+  background: var(--D3);
+  color: var(--WH);
+  font-family: 'Oswald', sans-serif;
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 3px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+  border: 1px solid rgba(245,192,0,.18);
+}
+.fb:hover .tip { opacity: 1; }
+.fb-call { background: var(--Y); color: var(--BK); }
+.fb-wa   { background: #25D366; color: var(--WH); }
+
+/* ═══════════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════════ */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--BK); }
+::-webkit-scrollbar-thumb { background: rgba(245,192,0,.3); border-radius: 3px; }
+
+/* ═══════════════════════════════════════════
+   MOBILE TWEAKS
+═══════════════════════════════════════════ */
+@media(max-width:500px){
+  .hero-kpis { gap: 20px; }
+  .kpi-n { font-size: 1.75rem; }
+  .cta-box { padding: 24px 20px; }
+  .phone-hero { font-size: 1.8rem; }
+  section { padding: 64px 5vw; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <div class="nav-brand">
+    <span class="name">Mian Saqib Hussain</span>
+    <span class="sub">Boom Truck Services · Dammam</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:0594032500" class="nav-cta">📞 Call Now</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <!-- Background: white crane truck on construction site from Unsplash -->
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-stripe"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span class="dot"></span> Boom Truck Services · Dammam, KSA</div>
+    <h1 class="hero-h1">
+      Mian <em>Saqib</em>
+      <span class="outline">Hussain</span>
+    </h1>
+    <p class="hero-tagline">
+      Reliable Lifting Solutions – Fast &amp; Safe
+      <span class="ar">حلول رفع موثوقة – سريعة وآمنة</span>
+    </p>
+    <div class="hero-bar"></div>
+    <div class="hero-btns">
+      <a href="tel:0594032500" class="btn-y">📞 Call — 0594 032 500</a>
+      <a href="https://wa.me/966594032500" target="_blank" rel="noopener" class="btn-ghost">💬 WhatsApp</a>
+    </div>
+    <div class="hero-kpis">
+      <div class="kpi"><span class="kpi-n">24/7</span><span class="kpi-l">Available</span></div>
+      <div class="kpi-sep"></div>
+      <div class="kpi"><span class="kpi-n">100%</span><span class="kpi-l">Safety</span></div>
+      <div class="kpi-sep"></div>
+      <div class="kpi"><span class="kpi-n">KSA</span><span class="kpi-l">Licensed</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TICKER ══ -->
+<div class="ticker-band" aria-hidden="true">
+  <div class="ticker-inner" id="ticker"></div>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="about-wrap">
+    <div class="about-img-stack rv">
+      <!--
+        Main image: white boom truck / crane truck on construction site
+        Unsplash: Construction crane / aerial work platform
+      -->
+      <img
+        class="about-img-main"
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80"
+        alt="Boom truck at construction site"
+        loading="lazy"
+        onerror="this.src='https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=80'"
+      >
+      <img
+        class="about-img-accent"
+        src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=500&q=80"
+        alt="Industrial lifting equipment"
+        loading="lazy"
+        onerror="this.style.display='none'"
+      >
+      <div class="about-badge">Dammam, KSA</div>
+    </div>
+    <div class="rv d1">
+      <div style="margin-bottom:28px">
+        <p class="tag">About Us</p>
+        <h2 class="sec-title">Professional <span class="y">Heavy Lifting</span></h2>
+      </div>
+      <div class="about-body">
+        <p>
+          Mian Saqib Hussain delivers expert boom truck and heavy lifting services across Dammam and surrounding industrial areas. Operating from the <strong>Dallah Industrial Zone</strong>, we are trusted by contractors and facility managers for safe, precise, and on-time operations.
+        </p>
+        <p class="ar">
+          ميان صاقب حسين يقدم خدمات شاحنات الرافعة الاحترافية في الدمام والمناطق الصناعية المجاورة. نعمل من منطقة دله الصناعية ونقدم حلول رفع آمنة ودقيقة وفي الوقت المحدد.
+        </p>
+        <div class="about-chips">
+          <span class="chip">✅ Licensed &amp; Insured</span>
+          <span class="chip">⚡ Fast Mobilization</span>
+          <span class="chip">🔒 Safety First</span>
+          <span class="chip">📍 Dallah Industrial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section id="services">
+  <div class="services-hdr rv">
+    <p class="tag">What We Do</p>
+    <h2 class="sec-title">Our <span class="y">Services</span></h2>
+    <p class="sec-sub">
+      Comprehensive boom truck solutions for every industrial need.
+      <span class="ar">حلول شاملة لشاحنات الرافعة لكل الاحتياجات الصناعية.</span>
+    </p>
+  </div>
+
+  <div class="services-grid">
+
+    <!-- 1 Heavy Lifting -->
+    <div class="scard rv">
+      <div class="scard-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=75"
+          alt="Heavy lifting boom truck"
+          loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=75'"
+        >
+        <span class="scard-num">01</span>
+        <div class="scard-icon-badge">🏗️</div>
+      </div>
+      <div class="scard-body">
+        <div class="scard-en">Heavy Lifting</div>
+        <span class="scard-ar">رفع الأحمال الثقيلة</span>
+        <p class="scard-desc">Precision lifting of heavy machinery, steel structures, and oversized loads using high-capacity certified boom trucks.</p>
+      </div>
+    </div>
+
+    <!-- 2 Boom Truck Rental -->
+    <div class="scard rv d1">
+      <div class="scard-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=75"
+          alt="Boom truck rental"
+          loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=75'"
+        >
+        <span class="scard-num">02</span>
+        <div class="scard-icon-badge">🚛</div>
+      </div>
+      <div class="scard-body">
+        <div class="scard-en">Boom Truck Rental</div>
+        <span class="scard-ar">تأجير شاحنات بوم</span>
+        <p class="scard-desc">Flexible short or long-term rental with or without a certified operator. Competitive rates for all project scales.</p>
+      </div>
+    </div>
+
+    <!-- 3 Construction Support -->
+    <div class="scard rv d2">
+      <div class="scard-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=75"
+          alt="Construction site support"
+          loading="lazy"
+        >
+        <span class="scard-num">03</span>
+        <div class="scard-icon-badge">🏢</div>
+      </div>
+      <div class="scard-body">
+        <div class="scard-en">Construction Support</div>
+        <span class="scard-ar">دعم الإنشاءات</span>
+        <p class="scard-desc">On-site structural support including material placement, steel beam installation, and elevated lifting on any build.</p>
+      </div>
+    </div>
+
+    <!-- 4 Equipment Handling -->
+    <div class="scard rv d3">
+      <div class="scard-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800&q=75"
+          alt="Industrial equipment handling"
+          loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=75'"
+        >
+        <span class="scard-num">04</span>
+        <div class="scard-icon-badge">⚙️</div>
+      </div>
+      <div class="scard-body">
+        <div class="scard-en">Equipment Handling</div>
+        <span class="scard-ar">مناولة المعدات</span>
+        <p class="scard-desc">Careful positioning of industrial equipment, HVAC units, generators, and sensitive machinery on any terrain.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ GUARANTEE STRIP ══ -->
+<div class="guarantee-strip" role="list">
+  <div class="gitem" role="listitem">
+    <span class="gi">⚡</span>
+    <span class="gt">Fast Deployment</span>
+    <span class="gs">Quick on-site mobilization</span>
+  </div>
+  <div class="gitem" role="listitem">
+    <span class="gi">🔒</span>
+    <span class="gt">Safety First</span>
+    <span class="gs">Certified operators, zero incidents</span>
+  </div>
+  <div class="gitem" role="listitem">
+    <span class="gi">💪</span>
+    <span class="gt">High Capacity</span>
+    <span class="gs">Handles the heaviest loads</span>
+  </div>
+  <div class="gitem" role="listitem">
+    <span class="gi">🤝</span>
+    <span class="gt">Reliable</span>
+    <span class="gs">Transparent pricing, on time</span>
+  </div>
+</div>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="rv" style="margin-bottom:44px">
+    <p class="tag">Get In Touch</p>
+    <h2 class="sec-title">Contact <span class="y">Us</span></h2>
+    <p class="sec-sub">
+      Ready to lift? One call does it all.
+      <span class="ar">جاهزون للرفع؟ مكالمة واحدة تكفي.</span>
+    </p>
+  </div>
+  <div class="contact-wrap">
+
+    <div class="cinfo rv">
+      <div class="cinfo-item">
+        <div class="cii-icon">📞</div>
+        <div>
+          <span class="cii-label">Phone</span>
+          <span class="cii-val"><a href="tel:0594032500">0594 032 500</a></span>
+        </div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cii-icon">💬</div>
+        <div>
+          <span class="cii-label">WhatsApp</span>
+          <span class="cii-val"><a href="https://wa.me/966594032500" target="_blank" rel="noopener" style="color:#25D366">Chat on WhatsApp</a></span>
+        </div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cii-icon">📍</div>
+        <div>
+          <span class="cii-label">Location</span>
+          <span class="cii-val">
+            Dallah Industrial, Dammam, KSA
+            <span class="ar">دله الصناعية، الدمام</span>
+          </span>
+        </div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cii-icon">🕐</div>
+        <div>
+          <span class="cii-label">Hours</span>
+          <span class="cii-val">24 / 7 — Including Weekends &amp; Holidays</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box rv d1">
+      <h3>Call Us <span>Right Now</span></h3>
+      <p class="sub">
+        For quotes, bookings, or urgent lifts — reach out instantly.
+        <span class="ar">للحصول على عروض أسعار أو الحجز أو أعمال الرفع العاجلة.</span>
+      </p>
+      <a href="tel:0594032500" class="phone-hero">0594 032 500</a>
+      <div class="cta-btns">
+        <a href="tel:0594032500" class="btn-call">📞 Tap to Call</a>
+        <a href="https://wa.me/966594032500" target="_blank" rel="noopener" class="btn-wa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Chat
+        </a>
+      </div>
+      <div class="qr-row">
+        <div class="qr-box">
+          <!-- QR Code placeholder pattern (visual) -->
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <rect width="80" height="80" fill="white"/>
+            <rect x="5" y="5" width="22" height="22" rx="2" fill="#000"/>
+            <rect x="9" y="9" width="14" height="14" rx="1" fill="white"/>
+            <rect x="12" y="12" width="8" height="8" fill="#000"/>
+            <rect x="53" y="5" width="22" height="22" rx="2" fill="#000"/>
+            <rect x="57" y="9" width="14" height="14" rx="1" fill="white"/>
+            <rect x="60" y="12" width="8" height="8" fill="#000"/>
+            <rect x="5" y="53" width="22" height="22" rx="2" fill="#000"/>
+            <rect x="9" y="57" width="14" height="14" rx="1" fill="white"/>
+            <rect x="12" y="60" width="8" height="8" fill="#000"/>
+            <rect x="32" y="5" width="4" height="4" fill="#000"/>
+            <rect x="38" y="5" width="4" height="4" fill="#000"/>
+            <rect x="44" y="5" width="4" height="4" fill="#000"/>
+            <rect x="32" y="11" width="4" height="4" fill="#000"/>
+            <rect x="44" y="11" width="4" height="4" fill="#000"/>
+            <rect x="38" y="17" width="4" height="4" fill="#000"/>
+            <rect x="32" y="23" width="4" height="4" fill="#000"/>
+            <rect x="44" y="23" width="4" height="4" fill="#000"/>
+            <rect x="5" y="32" width="4" height="4" fill="#000"/>
+            <rect x="11" y="32" width="4" height="4" fill="#000"/>
+            <rect x="17" y="38" width="4" height="4" fill="#000"/>
+            <rect x="5" y="44" width="4" height="4" fill="#000"/>
+            <rect x="17" y="44" width="4" height="4" fill="#000"/>
+            <rect x="32" y="32" width="4" height="4" fill="#000"/>
+            <rect x="38" y="38" width="4" height="4" fill="#000"/>
+            <rect x="44" y="32" width="4" height="4" fill="#000"/>
+            <rect x="50" y="38" width="4" height="4" fill="#000"/>
+            <rect x="56" y="32" width="4" height="4" fill="#000"/>
+            <rect x="68" y="38" width="4" height="4" fill="#000"/>
+            <rect x="62" y="44" width="4" height="4" fill="#000"/>
+            <rect x="74" y="44" width="4" height="4" fill="#000"/>
+            <rect x="32" y="56" width="4" height="4" fill="#000"/>
+            <rect x="44" y="62" width="4" height="4" fill="#000"/>
+            <rect x="38" y="68" width="4" height="4" fill="#000"/>
+            <rect x="50" y="56" width="4" height="4" fill="#000"/>
+            <rect x="62" y="62" width="4" height="4" fill="#000"/>
+            <rect x="68" y="56" width="4" height="4" fill="#000"/>
+            <rect x="74" y="68" width="4" height="4" fill="#000"/>
+          </svg>
+        </div>
+        <div class="qr-text">
+          <strong>WhatsApp QR Code</strong>
+          Scan to start a chat with us instantly.
+          <span style="font-family:'Cairo',sans-serif;direction:rtl;display:block;font-size:.82em;margin-top:2px;">امسح للتواصل عبر واتساب مباشرة</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LOCATION ══ -->
+<section id="location">
+  <div class="location-wrap">
+    <div class="rv">
+      <p class="tag">Find Us</p>
+      <h2 class="sec-title" style="margin-bottom:20px">Our <span class="y">Location</span></h2>
+      <div class="loc-info">
+        <div>
+          <p class="loc-head">📍 Address</p>
+          <p>
+            Dallah Industrial Area, Dammam, Saudi Arabia
+            <span class="ar">دله الصناعية، الدمام، المملكة العربية السعودية</span>
+          </p>
+        </div>
+        <div>
+          <p class="loc-head">🚀 Service Radius</p>
+          <p>We operate across Dammam, Al Khobar, Dhahran and surrounding Eastern Province areas.</p>
+        </div>
+        <a
+          href="https://maps.google.com/?q=Dallah+Industrial+Dammam+Saudi+Arabia"
+          target="_blank" rel="noopener"
+          class="directions-btn"
+        >🗺️ Get Directions</a>
+      </div>
+    </div>
+    <div class="map-frame rv d1">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.0!2d50.103!3d26.412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e6!2sDallah%20Industrial%20Area%2C%20Dammam!5e0!3m2!1sen!2ssa!4v1700000000!5m2!1sen!2ssa"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Dallah Industrial Area, Dammam">
+      </iframe>
+      <div class="map-pin">📍 Dallah Industrial, Dammam</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-logo">Mian Saqib Hussain</div>
+  <div class="footer-av">
+    Available for All Types of Lifting Jobs
+    <span class="ar">متاح لجميع أنواع أعمال الرفع</span>
+  </div>
+  <div class="footer-links">
+    <a href="tel:0594032500" class="fc">📞 0594 032 500</a>
+    <span class="footer-sep"></span>
+    <a href="https://wa.me/966594032500" target="_blank" rel="noopener" class="fw">💬 WhatsApp</a>
+    <span class="footer-sep"></span>
+    <a href="#services" style="color:var(--GR)">Services</a>
+  </div>
+  <small>© 2025 Mian Saqib Hussain Boom Truck Services · Dammam, Saudi Arabia</small>
+</footer>
+
+<!-- ══ FLOATING BUTTONS ══ -->
+<div class="floats">
+  <a href="https://wa.me/966594032500" target="_blank" rel="noopener" class="fb fb-wa" aria-label="WhatsApp">
+    <span class="tip">WhatsApp Chat</span>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a href="tel:0594032500" class="fb fb-call" aria-label="Call Us">
+    <span class="tip">Call Now</span>
+    📞
+  </a>
+</div>
+
+<script>
+// ── Hero BG Ken Burns
+(function(){
+  var bg = document.getElementById('heroBg');
+  if(bg){ window.addEventListener('load', function(){ bg.classList.add('loaded'); }); }
+})();
+
+// ── Ticker band
+(function(){
+  var items = [
+    'Heavy Lifting','رفع الأحمال الثقيلة',
+    'Boom Truck Rental','تأجير شاحنات بوم',
+    'Construction Support','دعم الإنشاءات',
+    'Equipment Handling','مناولة المعدات',
+    'Dammam · KSA','دله الصناعية، الدمام',
+    '0594 032 500','Call Anytime – 24/7'
+  ];
+  var t = document.getElementById('ticker');
+  if(!t) return;
+  // Duplicate for seamless loop
+  var html = '';
+  for(var i=0;i<4;i++){
+    items.forEach(function(it){
+      html += '<span class="ticker-item">'+it+'</span>';
+    });
+  }
+  t.innerHTML = html;
+})();
+
+// ── Scroll Reveal
+(function(){
+  var els = document.querySelectorAll('.rv');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+// ── Nav darken on scroll
+(function(){
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.style.background = window.scrollY > 60
+      ? 'rgba(10,10,10,.97)'
+      : 'rgba(10,10,10,.88)';
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
